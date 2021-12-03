@@ -11,7 +11,7 @@
 
     <title>
         
-        post title with whitespace - undefined
+        
         
     </title>
 
@@ -49,7 +49,7 @@
 <div class="nav" id="nav">
     <div class="avatar-name">
         <div class="avatar ">
-            <img src="/img/site1.jpg" />
+            <img src="/img/46012513.jpg" />
         </div>
         <div class="name">
             <i>Wuhall</i>
@@ -69,7 +69,7 @@
                     <span>标签</span>
                 </a>
             </li>
-            <li >
+            <li  class=active >
                 <a href="/archives">
                     <i class="iconfont icon-guidang2"></i>
                     <span>存档</span>
@@ -91,10 +91,6 @@
             
         </ul>
     </div>
-    
-        <div id="toc" class="toc-article">
-    
-</div>
     
 </div>
 
@@ -122,31 +118,50 @@
         
 
 
-<div class="post-container">
-    <div class="post-title">
-        post title with whitespace
-    </div>
+<!-- 归档列表 -->
 
-    <div class="post-meta">
-        <span class="attr">发布于：<span>2021-07-01 18:45:27</span></span>
-        
-        </span>
-        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
-</span>
-</span>
-    </div>
-    <div class="post-content ">
-        
-        
-        <br />
-        <div id="comment-container">
-        </div>
-        <div id="disqus_thread"></div>
+<div class="archives-container">
 
-        <div id="lv-container">
-        </div>
+<div class="one-tag-list">
+                <span class="fa fa-calendar-times-o listing-seperator" id="2021">
+                    <span class="tag-text">2021</span>
+                </span>
+    <ul>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li >
+            <span>11-03</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2021/11/03/activity流程引擎，Linux环境下-字体显示问题/">
+                        <span>
+                            activity流程引擎，Linux环境下 字体显示问题
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li >
+            <span>07-01</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2021/07/01/hello-world/">
+                        <span>
+                            Hello World
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
 
-    </div>
+    </ul>
+</div>
+
 </div>
 
     </div>
@@ -187,7 +202,7 @@
     // We expose some of the variables needed by the front end
     window.hexo_search_path = "search.json"
     window.hexo_root = "/"
-    window.isPost = true
+    window.isPost = false
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 

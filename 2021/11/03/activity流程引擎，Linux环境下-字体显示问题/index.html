@@ -11,7 +11,7 @@
 
     <title>
         
-        Hello World - undefined
+        activity流程引擎，Linux环境下 字体显示问题 - undefined
         
     </title>
 
@@ -93,7 +93,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+    
 </div>
     
 </div>
@@ -124,11 +124,11 @@
 
 <div class="post-container">
     <div class="post-title">
-        Hello World
+        activity流程引擎，Linux环境下 字体显示问题
     </div>
 
     <div class="post-meta">
-        <span class="attr">发布于：<span>2021-07-01 18:42:08</span></span>
+        <span class="attr">发布于：<span>2021-11-03 23:37:18</span></span>
         
         </span>
         <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
@@ -136,19 +136,11 @@
 </span>
     </div>
     <div class="post-content ">
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+        <p><img src="activity%E6%B5%81%E7%A8%8B%E5%BC%95%E6%93%8E%EF%BC%8CLinux%E7%8E%AF%E5%A2%83%E4%B8%8B-%E5%AD%97%E4%BD%93%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98_files/1.jpg"></p>
+<blockquote>
+<p>原因：ubuntu环境字体缺失<br>解决方案：<br>1.安装工具查看已安装字体<br><code>apt-get -y install fontconfig xfonts-utils</code><br>2.安装字体，将windows中常用字体全部拷贝至此文件夹 /usr/share/fonts/<br><img src="activity%E6%B5%81%E7%A8%8B%E5%BC%95%E6%93%8E%EF%BC%8CLinux%E7%8E%AF%E5%A2%83%E4%B8%8B-%E5%AD%97%E4%BD%93%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98_files/2.jpg"><br>3.建立字体索引信息，更新字体缓存<br>cd /usr/share/fonts/<br>mkfontscale<br>mkfontdir<br>fc-cache<br>查看是否安装成功<br><code>fc-list :lang=zh</code></p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/wangxintong_1992/article/details/81194896">参考</a></p>
 
         
         <br />
