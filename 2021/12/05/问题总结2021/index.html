@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        问题总结2021 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 了解技术背后真正解决的问题，在出现问题时尽快找到解决问题的思路。 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="/img/46012513.jpg" />
+        </div>
+        <div class="name">
+            <i>Wuhall</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%91%E5%90%AC%E7%A8%8B%E5%BA%8F%E5%BD%93%E5%89%8D%E6%97%A0%E6%B3%95%E8%AF%86%E5%88%AB%E8%BF%9E%E6%8E%A5%E6%8F%8F%E8%BF%B0%E7%AC%A6%E4%B8%AD%E6%89%80%E7%BB%99%E5%87%BA%E7%9A%84SID"><span class="toc-text">监听程序当前无法识别连接描述符中所给出的SID</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B8%85%E9%99%A4%E8%A1%A8%E5%86%85%E6%95%B0%E6%8D%AE-%EF%BC%88truncate-table%EF%BC%89%E6%97%B6%EF%BC%8C%E5%AD%98%E5%9C%A8%E5%A4%96%E9%94%AE%E7%BA%A6%E6%9D%9F-%E6%97%A0%E6%B3%95%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE"><span class="toc-text">清除表内数据 （truncate table）时，存在外键约束 无法操作数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sql-%E6%80%BB%E7%BB%93"><span class="toc-text">sql 总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-post%EF%BC%88jquery-%E7%9A%84-post-%E6%96%B9%E6%B3%95%EF%BC%89%E5%85%A5%E5%BA%93%E4%B8%80%E4%B8%AA%E5%AD%97%E6%AE%B5%E5%90%8E%EF%BC%8C%E7%B4%A7%E6%8E%A5%E7%9A%84%E6%9F%A5%E8%AF%A2-%E5%8D%B4%E6%B2%A1%E8%83%BD%E6%9F%A5%E5%88%B0%E8%BF%99%E6%9D%A1%E8%AE%B0%E5%BD%95"><span class="toc-text">使用$.post（jquery 的 post 方法）入库一个字段后，紧接的查询 却没能查到这条记录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E8%A1%A5%E7%A0%81%E7%9A%84%E7%9B%AE%E7%9A%84"><span class="toc-text">使用补码的目的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#int-1-%E4%B8%8Eint-11-%E7%9A%84%E5%8C%BA%E5%88%AB-%E2%80%93mysql%E4%B8%ADint-%E9%95%BF%E5%BA%A6"><span class="toc-text">int(1) 与int (11) 的区别 –mysql中int 长度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#linux%E6%96%87%E4%BB%B6%E5%B1%9E%E4%B8%BB%E4%B8%8E%E5%B1%9E%E7%BB%84"><span class="toc-text">linux文件属主与属组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7"><span class="toc-text">创建用户</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> 了解技术背后真正解决的问题，在出现问题时尽快找到解决问题的思路。 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        问题总结2021
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-12-05 15:18:03</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h2 id="监听程序当前无法识别连接描述符中所给出的SID"><a href="#监听程序当前无法识别连接描述符中所给出的SID" class="headerlink" title="监听程序当前无法识别连接描述符中所给出的SID"></a>监听程序当前无法识别连接描述符中所给出的SID</h2><blockquote>
+<p>ORA-12505, TNS:listener does not currently know of SID given in connect descriptor   //说明给到的sid有误,很有可就是服务名和sid混淆使用。<br><img src="./0001.png"><br>首先了解数据库url的写法有两种</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//监听sid服务，表示sid为orcl</span><br><span class="line">database.url=jdbc:oracle:thin:@171.xxx.96.xx:xxxx:orcl</span><br><span class="line">//监听服务名，表示服务名为orcl</span><br><span class="line">database.url=jdbc:oracle:thin:@171.xxx.96.xx:xxxx/orcl</span><br></pre></td></tr></table></figure>
+<p>第一种是监听sid服务，第二种则是监听服务名<br>所以发现是自己的sid写错导致出现这个错误，把服务名当做了sid<br>把orcl的 “ : ” 改为 “ / ”  访问正常</p>
+<h2 id="清除表内数据-（truncate-table）时，存在外键约束-无法操作数据"><a href="#清除表内数据-（truncate-table）时，存在外键约束-无法操作数据" class="headerlink" title="清除表内数据 （truncate table）时，存在外键约束 无法操作数据"></a>清除表内数据 （truncate table）时，存在外键约束 无法操作数据</h2><p>SET FOREIGN_KEY_CHECKS=0; #禁用外键<br>TRUNCATE TABLE tableName;  #清空表<br>SET FOREIGN_KEY_CHECKS=1; #启用外键</p>
+<h2 id="sql-总结"><a href="#sql-总结" class="headerlink" title="sql 总结"></a>sql 总结</h2><p>– 这段sql 使用exists ,exists的条件类似bool ，能返回结果集则true，不能返回结果集则返回false<br>exists 与 in 最大的区别在于  in一定是外层条件比in 条件覆盖范围大<br>SELECT<br> a.user_id,<br> a.longitude,<br> a.latitude,<br> a.create_date,<br> su.NAME,<br> su.login_name<br>FROM<br> zhjl_user_track a<br> LEFT JOIN sys_user su ON su.id = a.user_id<br>WHERE<br> NOT EXISTS (<br> SELECT<br>  1<br> FROM<br>  zhjl_user_track b<br> WHERE<br> a.user_id = b.user_id<br> AND b.create_date &gt; a.create_date)</p>
+<ul>
+<li>以下这段SQL使用 inner join \ 分组、聚合函数<br>inner join 本质上就是两个表的交集、分组使用聚合函数用以取出最大时间的人<br>SELECT a.user_id AS userId, a.longitude, a.latitude, a.create_date AS createDate, su.name, su.login_name FROM zhjl_user_track a<br>INNER JOIN<br>(SELECT a.user_id AS userId, a.<code>create_date</code> FROM zhjl_user_track a GROUP BY a.user_id HAVING a.<code>create_date</code>=MAX(a.<code>create_date</code>)) t<br> ON a.user_id=t.userId AND a.create_date=t.create_date<br>INNER JOIN sys_user su ON su.id = a.user_id<br>WHERE a.create_date&gt;=’2021-02-01 0:00:00’<br>LIMIT 100</li>
+</ul>
+<h2 id="使用-post（jquery-的-post-方法）入库一个字段后，紧接的查询-却没能查到这条记录"><a href="#使用-post（jquery-的-post-方法）入库一个字段后，紧接的查询-却没能查到这条记录" class="headerlink" title="使用$.post（jquery 的 post 方法）入库一个字段后，紧接的查询 却没能查到这条记录"></a>使用$.post（jquery 的 post 方法）入库一个字段后，紧接的查询 却没能查到这条记录</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$.post() 和 $.get() 默认是 异步请求</span><br><span class="line">$.ajaxSettings.async = false;//可在$.post 之前将ajax 设置为同步</span><br><span class="line">$.ajaxSettings.async = true;//默认为true 、异步请求</span><br></pre></td></tr></table></figure>
+<p>异步<br>当一个异步请求发送时，浏览器不会处于锁死、等待的状态，一个异步请求从发送到获取响应的期间，浏览器还可以执行其他操作，这就是异步请求。</p>
+<h2 id="使用补码的目的"><a href="#使用补码的目的" class="headerlink" title="使用补码的目的"></a>使用补码的目的</h2><p>使用补码的目的是省去计算中判断符号的麻烦，不论正数还是负数都统一做加法计算；<br>最高位为0是正数、最高位为1是负数<br>原码：10000001 （-1）    00000011 （3）<br>正数的补码为其本身；负数的补码：符号位不变、其他位取反、而后加1<br>补码：11111111                   00000011<br>结果：00000010  （2）</p>
+<h2 id="int-1-与int-11-的区别-–mysql中int-长度"><a href="#int-1-与int-11-的区别-–mysql中int-长度" class="headerlink" title="int(1) 与int (11) 的区别 –mysql中int 长度"></a>int(1) 与int (11) 的区别 –mysql中int 长度</h2><p>理论上int 长度是为 4个byte 范围在 -2^31~2^31-1<br>int 字符长度不管是设置为1 还是11 都是 4个byte ，最大值为20多亿，宽度只是在设置zerofill 后在长度不及时填充零<br>当整数类型int 不够存 应设置为bigint 而不应该去继续扩大int的长度<br>这次遇到的exception为 out of range for value column ‘office_id’</p>
+<h2 id="linux文件属主与属组"><a href="#linux文件属主与属组" class="headerlink" title="linux文件属主与属组"></a>linux文件属主与属组</h2><p><img src="./0002.png"><br>从左至右第一个字符代表文件类型<br>• 当为[ d ]则是目录<br>• 当为[ - ]则是文件；<br>• 若是[ l ]则表示为链接文档(link file)；<br>• 若是[ b ]则表示为装置文件里面的可供储存的接口设备(可随机存取装置)；<br>• 若是[ c ]则表示为装置文件里面的串行端口设备，例如键盘、鼠标(一次性读取装置)。<br><img src="./1699970-20190616125146973-273227113.png"></p>
+<p>chown [–R] 属主名 文件名<br>chown [-R] 属主名：属组名 文件名</p>
+<h2 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h2><p>useradd -m changfeng -d /home/changfeng -s /bin/bash</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

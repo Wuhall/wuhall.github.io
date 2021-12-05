@@ -11,7 +11,7 @@
 
     <title>
         
-        imagtest - undefined
+        监听程序当前无法识别连接描述符中所给出的SID - undefined
         
     </title>
 
@@ -124,11 +124,17 @@
 
 <div class="post-container">
     <div class="post-title">
-        imagtest
+        监听程序当前无法识别连接描述符中所给出的SID
     </div>
 
     <div class="post-meta">
-        <span class="attr">发布于：<span>2021-12-05 14:34:59</span></span>
+        <span class="attr">发布于：<span>2021-12-05 15:04:07</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#jdbc" title="jdbc">jdbc</a>
+        <span>/</span>
+        
         
         </span>
         <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
@@ -136,7 +142,11 @@
 </span>
     </div>
     <div class="post-content ">
-        <p><img src="/.io//46012513.jpg" alt="CentOS8安装GNOME3桌面并设置开机启动图形界面CentOS8安装GNOME3桌面并设置开机启动图形界面"></p>
+        <blockquote>
+<p>ORA-12505, TNS:listener does not currently know of SID given in connect descriptor   //说明给到的sid有误,很有可就是服务名和sid混淆使用。<br><img src="./0001.png"><br>首先了解数据库url的写法有两种</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//监听sid服务，表示sid为orcl</span><br><span class="line">database.url=jdbc:oracle:thin:@171.xxx.96.xx:xxxx:orcl</span><br><span class="line">//监听服务名，表示服务名为orcl</span><br><span class="line">database.url=jdbc:oracle:thin:@171.xxx.96.xx:xxxx/orcl</span><br></pre></td></tr></table></figure>
+<p>第一种是监听sid服务，第二种则是监听服务名<br>所以发现是自己的sid写错导致出现这个错误，把服务名当做了sid<br>把orcl的 “ : ” 改为 “ / ”  访问正常</p>
 
         
         <br />
