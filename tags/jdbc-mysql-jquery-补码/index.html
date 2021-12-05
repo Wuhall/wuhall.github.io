@@ -11,7 +11,7 @@
 
     <title>
         
-        监听程序当前无法识别连接描述符中所给出的SID - undefined
+        
         
     </title>
 
@@ -63,7 +63,7 @@
                     <span>主页</span>
                 </a>
             </li>
-            <li >
+            <li  class=active >
                 <a href="/tags">
                     <i class="iconfont icon-biaoqian1"></i>
                     <span>标签</span>
@@ -92,10 +92,6 @@
         </ul>
     </div>
     
-        <div id="toc" class="toc-article">
-    
-</div>
-    
 </div>
 
 
@@ -122,42 +118,80 @@
         
 
 
-<div class="post-container">
-    <div class="post-title">
-        监听程序当前无法识别连接描述符中所给出的SID
-    </div>
+<!-- 归档列表 -->
 
-    <div class="post-meta">
-        <span class="attr">发布于：<span>2021-12-05 15:04:07</span></span>
-        
-        <span class="attr">标签：/
-        
-        <a class="tag" href="/tags/#jdbc" title="jdbc">jdbc</a>
-        <span>/</span>
-        
-        
-        </span>
-        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
-</span>
-</span>
-    </div>
-    <div class="post-content ">
-        <blockquote>
-<p>ORA-12505, TNS:listener does not currently know of SID given in connect descriptor   //说明给到的sid有误,很有可就是服务名和sid混淆使用。<br><img src="./0001.png"><br>首先了解数据库url的写法有两种</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//监听sid服务，表示sid为orcl</span><br><span class="line">database.url=jdbc:oracle:thin:@171.xxx.96.xx:xxxx:orcl</span><br><span class="line">//监听服务名，表示服务名为orcl</span><br><span class="line">database.url=jdbc:oracle:thin:@171.xxx.96.xx:xxxx/orcl</span><br></pre></td></tr></table></figure>
-<p>第一种是监听sid服务，第二种则是监听服务名<br>所以发现是自己的sid写错导致出现这个错误，把服务名当做了sid<br>把orcl的 “ : ” 改为 “ / ”  访问正常</p>
+<div class="archives-container">
 
+<div class="one-tag-list">
+                <span class="fa fa-calendar-times-o listing-seperator" id="2021">
+                    <span class="tag-text">2021</span>
+                </span>
+    <ul>
         
-        <br />
-        <div id="comment-container">
-        </div>
-        <div id="disqus_thread"></div>
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li >
+            <span>12-05</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2021/12/05/问题总结2021/">
+                        <span>
+                            问题总结2021
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li >
+            <span>12-05</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2021/12/05/word转md/">
+                        <span>
+                            word转md
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li >
+            <span>12-05</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2021/12/05/linux-readme/">
+                        <span>
+                            linux-readme
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li >
+            <span>07-01</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2021/07/01/hello-world/">
+                        <span>
+                            Hello World
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
 
-        <div id="lv-container">
-        </div>
+    </ul>
+</div>
 
-    </div>
 </div>
 
     </div>
@@ -198,7 +232,7 @@
     // We expose some of the variables needed by the front end
     window.hexo_search_path = "search.json"
     window.hexo_root = "/"
-    window.isPost = true
+    window.isPost = false
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 
