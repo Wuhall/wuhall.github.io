@@ -629,7 +629,7 @@
 <p>nohup java -jar jarName.jar &gt;log.txt &amp; // &gt; 输出文件，如果文件不存在会创建</p>
 <h3 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h3><p><a target="_blank" rel="noopener" href="https://www.runoob.com/docker/docker-hello-world.html">https://www.runoob.com/docker/docker-hello-world.html</a></p>
 <h4 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h4><p>curl -fsSL <a target="_blank" rel="noopener" href="https://get.docker.com/">https://get.docker.com</a> | bash -s docker –mirror Aliyun</p>
-<h4 id="创建容器"><a href="#创建容器" class="headerlink" title="创建容器"></a>创建容器</h4><p>docker run -itd -p 80:80 -p 8081:8081 -p 3336:3336 -p 8001:22 –name dev_common<br>ubuntu:20.04 /bin/bash</p>
+<h4 id="创建容器"><a href="#创建容器" class="headerlink" title="创建容器"></a>创建容器</h4><p>docker run -itd -p 80:80 -p 8081:8081 -p 3336:3336 -p 8001:22 –name dev_common ubuntu:20.04 /bin/bash</p>
 <p>//创建容器，并进入，其中/bin/bash 为 交互式 shell， -p 宿主机端口:容器端口<br>映射端口</p>
 <p>docker ps -a</p>
 <p>//查看所有容器</p>
