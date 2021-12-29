@@ -11,7 +11,7 @@
 
     <title>
         
-        git分支从master切换至main - undefined
+        动手学深度学习 - undefined
         
     </title>
 
@@ -93,7 +93,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E8%83%8C%E6%99%AF"><span class="toc-text">问题背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%AD%A5%E9%AA%A4"><span class="toc-text">解决步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8A%E4%BC%A0%E9%A1%B9%E7%9B%AE%E8%87%B3github"><span class="toc-text">上传项目至github</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85miniconda"><span class="toc-text">安装miniconda</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text"></span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8jupyter"><span class="toc-text">使用jupyter</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E9%94%AE%E7%BB%84%E4%BB%B6"><span class="toc-text">关键组件</span></a></li></ol></li></ol>
 </div>
     
 </div>
@@ -124,15 +124,15 @@
 
 <div class="post-container">
     <div class="post-title">
-        git分支从master切换至main
+        动手学深度学习
     </div>
 
     <div class="post-meta">
-        <span class="attr">发布于：<span>2021-12-22 16:35:00</span></span>
+        <span class="attr">发布于：<span>2021-12-28 10:03:08</span></span>
         
         <span class="attr">标签：/
         
-        <a class="tag" href="/tags/#git" title="git">git</a>
+        <a class="tag" href="/tags/#deep learning" title="deep learning">deep learning</a>
         <span>/</span>
         
         
@@ -142,9 +142,17 @@
 </span>
     </div>
     <div class="post-content ">
-        <h2 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h2><p>本地当前分支为master，远程仓库为main，且远程仓库与本地仓库有 unrelated histories这样的问题</p>
-<h2 id="解决步骤"><a href="#解决步骤" class="headerlink" title="解决步骤"></a>解决步骤</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b main</span><br><span class="line"># Switched to a new branch &#x27;main&#x27;</span><br><span class="line">git branch</span><br><span class="line"># * main</span><br><span class="line">#  master</span><br><span class="line">git merge master # 将master分支合并到main上</span><br><span class="line"># Already up to date.</span><br><span class="line">git pull origin main --allow-unrelated-histories # git pull origin main会报错：refusing to merge unrelated histories</span><br><span class="line">git push origin main</span><br></pre></td></tr></table></figure>
-<h2 id="上传项目至github"><a href="#上传项目至github" class="headerlink" title="上传项目至github"></a>上传项目至github</h2><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/zouwangblog/p/11201561.html">https://www.cnblogs.com/zouwangblog/p/11201561.html</a></p>
+        <p>李沐动手学深度学习: <a target="_blank" rel="noopener" href="http://zh-v2.d2l.ai/chapter_installation/index.html">link</a></p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt install build-essential</span><br><span class="line">apt install python3.8</span><br></pre></td></tr></table></figure>
+<h2 id="安装miniconda"><a href="#安装miniconda" class="headerlink" title="安装miniconda"></a>安装miniconda</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget https://repo.anaconda.com/miniconda/Miniconda3-py38_4.10.3-Linux-x86_64.sh</span><br><span class="line">sh Miniconda3-py38_4.10.3-Linux-x86_64.sh </span><br><span class="line">【注】 Miniconda 中只含 python 与 conda</span><br><span class="line">conda为包管理系统，管理环境</span><br></pre></td></tr></table></figure>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pip install jupyter d2l torch torchvision</span><br><span class="line">国内使用 </span><br><span class="line">pip install torch torchvision -i https://pypi.tuna.tsinghua.edu.cn/simple</span><br></pre></td></tr></table></figure>
+<p>【注】<br>pip 为python包管理工具<br>jupyter 为记事本工具</p>
+<h2 id="使用jupyter"><a href="#使用jupyter" class="headerlink" title="使用jupyter"></a>使用jupyter</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> jupyter notebook --ip=0.0.0.0 --no-browser --allow-root</span><br><span class="line">【注】 --ip=0.0.0.0 表示任意端口可以访问 --no-browser 表示不开启浏览器</span><br></pre></td></tr></table></figure>
+
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h2 id="关键组件"><a href="#关键组件" class="headerlink" title="关键组件"></a>关键组件</h2><p>我们可以学习的数据（data;</p>
+<p>如何转换数据的模型（model）；</p>
+<p>一个目标函数（objective function），用来量化模型的有效性；</p>
+<p>调整模型参数以优化目标函数的算法（algorithm）。</p>
 
         
         <br />
