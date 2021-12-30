@@ -93,7 +93,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%91%98%E8%A6%81"><span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#log4j-1-2-17-%E6%9C%AC%E8%BA%AB%E5%AD%98%E5%9C%A8%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">log4j 1.2.17 本身存在的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A5%E5%BF%97%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E6%95%B4%E6%94%B9%E5%BB%BA%E8%AE%AE%EF%BC%9A"><span class="toc-text">日志事件的序列化漏洞整改建议：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jar%E5%8C%85%E5%8D%87%E7%BA%A7%E7%9A%84%E6%BD%9C%E5%9C%A8%E9%97%AE%E9%A2%98"><span class="toc-text">jar包升级的潜在问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%8F%E5%88%97%E5%8C%96"><span class="toc-text">序列化</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%91%98%E8%A6%81"><span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#log4j-1-2-17-%E6%9C%AC%E8%BA%AB%E5%AD%98%E5%9C%A8%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">log4j 1.2.17 本身存在的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A5%E5%BF%97%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E6%95%B4%E6%94%B9%E5%BB%BA%E8%AE%AE%EF%BC%9A"><span class="toc-text">日志事件的序列化漏洞整改建议：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jar%E5%8C%85%E5%8D%87%E7%BA%A7%E7%9A%84%E6%BD%9C%E5%9C%A8%E9%97%AE%E9%A2%98"><span class="toc-text">jar包升级的潜在问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#java%E5%BA%8F%E5%88%97%E5%8C%96%E4%B8%8EI-O"><span class="toc-text">java序列化与I&#x2F;O</span></a></li></ol>
 </div>
     
 </div>
@@ -147,7 +147,8 @@
 <h3 id="日志事件的序列化漏洞整改建议："><a href="#日志事件的序列化漏洞整改建议：" class="headerlink" title="日志事件的序列化漏洞整改建议："></a>日志事件的序列化漏洞整改建议：</h3><p>临时手段：<br>禁止log4j 1.2.17中SocketServer类启用端口或启用端口不对外开放 </p>
 <p>官方建议：<br>升级至log4j 2.8.2以上版本<br>下载链接：<a target="_blank" rel="noopener" href="https://logging.apache.org/log4j/2.x/download.html">https://logging.apache.org/log4j/2.x/download.html</a></p>
 <h2 id="jar包升级的潜在问题"><a href="#jar包升级的潜在问题" class="headerlink" title="jar包升级的潜在问题"></a>jar包升级的潜在问题</h2><p>Alibaba druid最新jar包版本1.2.8中依旧依赖log4j 1.2.17的库，若强制升级log4j版本，只能放弃druid更换数据库连接池组件。<br><img src="./x.png"></p>
-<h2 id="序列化"><a href="#序列化" class="headerlink" title="序列化"></a>序列化</h2>
+<h2 id="java序列化与I-O"><a href="#java序列化与I-O" class="headerlink" title="java序列化与I/O"></a>java序列化与I/O</h2><p>java序列化本质上是为了解决对象本地保存与网络传输的问题，具体做法是将对象的内容流化，转储为字节序列，待需要使用对象时，将字节序列转为对象。<br>引入serialVersionUID是为了确认发送方与接收方版本一致，提高兼容性</p>
+
         
         <br />
         <div id="comment-container">
