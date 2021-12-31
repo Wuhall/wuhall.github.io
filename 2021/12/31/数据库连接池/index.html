@@ -11,7 +11,7 @@
 
     <title>
         
-        log4j1.x漏洞梳理 - undefined
+        数据库连接池 - undefined
         
     </title>
 
@@ -93,7 +93,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%91%98%E8%A6%81"><span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#log4j-1-2-17-%E6%9C%AC%E8%BA%AB%E5%AD%98%E5%9C%A8%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">log4j 1.2.17 本身存在的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A5%E5%BF%97%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E%E6%95%B4%E6%94%B9%E5%BB%BA%E8%AE%AE%EF%BC%9A"><span class="toc-text">日志事件的序列化漏洞整改建议：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jar%E5%8C%85%E5%8D%87%E7%BA%A7%E7%9A%84%E6%BD%9C%E5%9C%A8%E9%97%AE%E9%A2%98"><span class="toc-text">jar包升级的潜在问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#java%E5%BA%8F%E5%88%97%E5%8C%96%E4%B8%8EI-O"><span class="toc-text">java序列化与I&#x2F;O</span></a></li></ol>
+    
 </div>
     
 </div>
@@ -124,17 +124,11 @@
 
 <div class="post-container">
     <div class="post-title">
-        log4j1.x漏洞梳理
+        数据库连接池
     </div>
 
     <div class="post-meta">
-        <span class="attr">发布于：<span>2021-12-29 17:56:26</span></span>
-        
-        <span class="attr">标签：/
-        
-        <a class="tag" href="/tags/#log4j1.x" title="log4j1.x">log4j1.x</a>
-        <span>/</span>
-        
+        <span class="attr">发布于：<span>2021-12-31 09:18:40</span></span>
         
         </span>
         <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
@@ -142,12 +136,7 @@
 </span>
     </div>
     <div class="post-content ">
-        <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>近期爆发的关于log4j漏洞本质上是RCE（远程命令执行漏洞），涉及log4j的版本为log4j2 2.0-beta7 ~ 2.17.0 (不包括2.3.2 and 2.12.4)<br>公司系统引入alibaba druid 1.0.18作为数据连接池组件，而alibaba druid 1.0.18引入 log4j 1.2.17作为日志组件， 本质上log4j 1.2.17的版本与这次RCE漏洞并不相干，但1.2.17本身存在日志事件的序列化漏洞，针对序列化漏洞，我们可以采取禁止log4j 1.2.17中SocketServer类启用端口或启用端口不对外开放的手段规避，若省公司网信安承认我们针对序列化漏洞的规避手段，可避免大动干戈的jar包升级，若不承认，则需更换数据连接池组件。<br>【参考log4j官方文档】<a target="_blank" rel="noopener" href="https://logging.apache.org/log4j/2.x/">https://logging.apache.org/log4j/2.x/</a><br><img src="./1640772024.jpg"></p>
-<h2 id="log4j-1-2-17-本身存在的问题"><a href="#log4j-1-2-17-本身存在的问题" class="headerlink" title="log4j 1.2.17 本身存在的问题"></a>log4j 1.2.17 本身存在的问题</h2><p>log4j 1.2.17 已于2015.08.05停止维护，时至今日已被发现的漏洞为日志事件的序列化漏洞<br>【log4j官方文档】<a target="_blank" rel="noopener" href="https://logging.apache.org/log4j/1.2/">https://logging.apache.org/log4j/1.2/</a><br> <img src="./x2.jpg"></p>
-<h3 id="日志事件的序列化漏洞整改建议："><a href="#日志事件的序列化漏洞整改建议：" class="headerlink" title="日志事件的序列化漏洞整改建议："></a>日志事件的序列化漏洞整改建议：</h3><p>临时手段：<br>禁止log4j 1.2.17中SocketServer类启用端口或启用端口不对外开放 </p>
-<p>官方建议：<br>升级至log4j 2.8.2以上版本<br>下载链接：<a target="_blank" rel="noopener" href="https://logging.apache.org/log4j/2.x/download.html">https://logging.apache.org/log4j/2.x/download.html</a></p>
-<h2 id="jar包升级的潜在问题"><a href="#jar包升级的潜在问题" class="headerlink" title="jar包升级的潜在问题"></a>jar包升级的潜在问题</h2><p>Alibaba druid最新jar包版本1.2.8中依旧依赖log4j 1.2.17的库，若强制升级log4j版本，只能放弃druid更换数据库连接池组件。<br><img src="./x.png"></p>
-<h2 id="java序列化与I-O"><a href="#java序列化与I-O" class="headerlink" title="java序列化与I/O"></a>java序列化与I/O</h2><p>java序列化本质上是为了解决对象本地保存与网络传输的问题，具体做法是将对象的内容流化，转储为字节序列，待需要使用对象时，将字节序列转为对象。<br>引入serialVersionUID是为了确认发送方与接收方版本一致，提高兼容性<br>java序列化机制完善了java IO</p>
+        <p>数据连接被视作一种资源，数据连接池的出现是为了解决管理数据连接的问题</p>
 
         
         <br />
