@@ -11,7 +11,7 @@
 
     <title>
         
-        
+        Linux常用命令以及问题场景 - undefined
         
     </title>
 
@@ -57,7 +57,7 @@
     </div>
     <div class="contents" id="nav-content">
         <ul>
-            <li  class=active >
+            <li >
                 <a href="/">
                     <i class="iconfont icon-shouye1"></i>
                     <span>主页</span>
@@ -92,6 +92,10 @@
         </ul>
     </div>
     
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C"><span class="toc-text">命令行</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#tail"><span class="toc-text">tail</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E5%9C%BA%E6%99%AF"><span class="toc-text">问题场景</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E6%96%87%E4%BB%B6%E6%9C%AB%E5%B0%BE%E8%BF%BD%E5%8A%A0%E5%86%85%E5%AE%B9"><span class="toc-text">在文件末尾追加内容</span></a></li></ol></li></ol>
+</div>
+    
 </div>
 
 
@@ -116,71 +120,49 @@
     <div class="index-middle">
         <!-- Main Content -->
         
-<div class="post-preview-container" style="min-height: 720px">
-    
-    <div class="post-preview">
-        <div class="post-time">2021-12-05</div>
-        <div class="post-info">
-            <a href="/2021/12/05/word转md/">
-                <h3>
-                    word转md
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#markdown" title="markdown">markdown</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
+
+
+<div class="post-container">
+    <div class="post-title">
+        Linux常用命令以及问题场景
     </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2021-12-05</div>
-        <div class="post-info">
-            <a href="/2021/12/05/linux-readme/">
-                <h3>
-                    linux-readme
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#linux docker" title="linux docker">linux docker</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2022-01-05 10:49:34</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#Linux" title="Linux">Linux</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
     </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2021-07-01</div>
-        <div class="post-info">
-            <a href="/2021/07/01/hello-world/">
-                <h3>
-                    Hello World
-                </h3>
-            </a>
-            <p>
-                
-            </p>
+    <div class="post-content ">
+        <h2 id="命令行"><a href="#命令行" class="headerlink" title="命令行"></a>命令行</h2><h3 id="tail"><a href="#tail" class="headerlink" title="tail"></a>tail</h3><p>打印文本末尾10行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail [file name]</span><br></pre></td></tr></table></figure>
+<p>追加打印</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail -f [file name]</span><br></pre></td></tr></table></figure>
+<p>打印文本末尾5000行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail -n 5000 [file name]</span><br></pre></td></tr></table></figure>
+<h2 id="问题场景"><a href="#问题场景" class="headerlink" title="问题场景"></a>问题场景</h2><h3 id="在文件末尾追加内容"><a href="#在文件末尾追加内容" class="headerlink" title="在文件末尾追加内容"></a>在文件末尾追加内容</h3><p>将文件写入到abc.txt,若没有abc.txt则会自动创建</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail -n 5000 catalina.out &gt; abc.txt</span><br></pre></td></tr></table></figure>
+<p>将文件写入到abc.txt末尾,若没有abc.txt会被自动创建<br>tail -n 5000 catalina.out &gt;&gt; abc.txt</p>
+
+        
+        <br />
+        <div id="comment-container">
         </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
     </div>
-    
 </div>
-<ul class="pager">
-    
-    <li class="previous">
-        <a href="/">&larr; Newer Posts</a>
-    </li>
-    
-    
-</ul>
 
     </div>
 </div>
@@ -228,7 +210,7 @@
     // We expose some of the variables needed by the front end
     window.hexo_search_path = "search.json"
     window.hexo_root = "/"
-    window.isPost = false
+    window.isPost = true
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 
