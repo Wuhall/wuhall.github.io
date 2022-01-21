@@ -93,7 +93,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C"><span class="toc-text">命令行</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#tail"><span class="toc-text">tail</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E5%9C%BA%E6%99%AF"><span class="toc-text">问题场景</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E6%96%87%E4%BB%B6%E6%9C%AB%E5%B0%BE%E8%BF%BD%E5%8A%A0%E5%86%85%E5%AE%B9"><span class="toc-text">在文件末尾追加内容</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C"><span class="toc-text">命令行</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#tail"><span class="toc-text">tail</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#zip"><span class="toc-text">zip</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%8E%8B%E7%BC%A9%E8%A7%A3%E5%8E%8B%E5%91%BD%E4%BB%A4"><span class="toc-text">常用压缩解压命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E5%9C%BA%E6%99%AF"><span class="toc-text">问题场景</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E6%96%87%E4%BB%B6%E6%9C%AB%E5%B0%BE%E8%BF%BD%E5%8A%A0%E5%86%85%E5%AE%B9"><span class="toc-text">在文件末尾追加内容</span></a></li></ol></li></ol>
 </div>
     
 </div>
@@ -148,7 +148,9 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail -f [file name]</span><br></pre></td></tr></table></figure>
 <p>打印文本末尾5000行</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail -n 5000 [file name]</span><br></pre></td></tr></table></figure>
-<h2 id="问题场景"><a href="#问题场景" class="headerlink" title="问题场景"></a>问题场景</h2><h3 id="在文件末尾追加内容"><a href="#在文件末尾追加内容" class="headerlink" title="在文件末尾追加内容"></a>在文件末尾追加内容</h3><p>将文件写入到abc.txt,若没有abc.txt则会自动创建</p>
+<h3 id="zip"><a href="#zip" class="headerlink" title="zip"></a>zip</h3><p>压缩文件,将 /home/html/ 这个目录下所有文件和文件夹打包为当前目录下的 html.zip,-q不显示执行细节</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zip -q -r html.zip /home/html</span><br></pre></td></tr></table></figure>
+<h3 id="常用压缩解压命令"><a href="#常用压缩解压命令" class="headerlink" title="常用压缩解压命令"></a>常用压缩解压命令</h3><h2 id="问题场景"><a href="#问题场景" class="headerlink" title="问题场景"></a>问题场景</h2><h3 id="在文件末尾追加内容"><a href="#在文件末尾追加内容" class="headerlink" title="在文件末尾追加内容"></a>在文件末尾追加内容</h3><p>将文件写入到abc.txt,若没有abc.txt则会自动创建</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail -n 5000 catalina.out &gt; abc.txt</span><br></pre></td></tr></table></figure>
 <p>将文件写入到abc.txt末尾,若没有abc.txt会被自动创建</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail -n 5000 catalina.out &gt;&gt; abc.txt</span><br></pre></td></tr></table></figure>

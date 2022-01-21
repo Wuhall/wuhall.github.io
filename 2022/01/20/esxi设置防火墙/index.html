@@ -11,7 +11,7 @@
 
     <title>
         
-        
+        esxi设置防火墙 - undefined
         
     </title>
 
@@ -57,7 +57,7 @@
     </div>
     <div class="contents" id="nav-content">
         <ul>
-            <li  class=active >
+            <li >
                 <a href="/">
                     <i class="iconfont icon-shouye1"></i>
                     <span>主页</span>
@@ -92,6 +92,10 @@
         </ul>
     </div>
     
+        <div id="toc" class="toc-article">
+    
+</div>
+    
 </div>
 
 
@@ -116,91 +120,43 @@
     <div class="index-middle">
         <!-- Main Content -->
         
-<div class="post-preview-container" style="min-height: 720px">
-    
-    <div class="post-preview">
-        <div class="post-time">2021-12-05</div>
-        <div class="post-info">
-            <a href="/2021/12/05/问题总结2021/">
-                <h3>
-                    问题总结2021
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#jdbc mysql jquery 补码" title="jdbc mysql jquery 补码">jdbc mysql jquery 补码</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
+
+
+<div class="post-container">
+    <div class="post-title">
+        esxi设置防火墙
     </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2021-12-05</div>
-        <div class="post-info">
-            <a href="/2021/12/05/word转md/">
-                <h3>
-                    word转md
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#markdown" title="markdown">markdown</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2022-01-20 10:12:30</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#ESXI" title="ESXI">ESXI</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
     </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2021-12-05</div>
-        <div class="post-info">
-            <a href="/2021/12/05/linux-readme/">
-                <h3>
-                    linux-readme
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#linux docker" title="linux docker">linux docker</a>
-                <span>/</span>
-                
-                
-            </p>
+    <div class="post-content ">
+        <p>防火墙命令<br>命令    描述<br>esxcli network firewall get    返回防火墙的启用或禁用状态，并列出默认操作。<br>esxcli network firewall set –default-action    设置为 true 可将默认操作设置为通过。设置为 false 可将默认操作设置为丢弃。<br>esxcli network firewall set –enabled    启用或禁用 ESXi 防火墙。<br>esxcli network firewall load    加载防火墙模块和规则集配置文件。<br>esxcli network firewall refresh    如果已加载防火墙模块，则通过读取规则集文件来刷新防火墙配置。<br>esxcli network firewall unload    破坏过滤器并卸载防火墙模块。<br>esxcli network firewall ruleset list    列出规则集信息。<br>esxcli network firewall ruleset set –allowed-all    设置为 true 可允许所有人对所有 IP 地址具有访问权限。设置为 false 可使用允许的 IP 地址列表。<br>esxcli network firewall ruleset set –enabled –ruleset-id=<string>    将“已启用”设置为 true 可启用指定规则集。将“已启用”设置为 false 可禁用指定规则集。<br>esxcli network firewall ruleset allowedip list    列出指定规则集允许的 IP 地址。<br>esxcli network firewall ruleset allowedip add    允许从指定的 IP 地址或 IP 地址范围访问规则集。<br>esxcli network firewall ruleset allowedip remove    从指定的 IP 地址或 IP 地址范围移除对规则集的访问。<br>esxcli network firewall ruleset rule list     列出防火墙中的每个规则集的规则。<br>eg.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">esxcli network firewall ruleset set --allowed-all false --ruleset-id=vSphereClient</span><br><span class="line">esxcli network firewall ruleset allowedip add --ip-address=192.168.21.0/24 --ruleset-id=vSphereClient</span><br></pre></td></tr></table></figure>
+<p>more info：<a target="_blank" rel="noopener" href="https://docs.vmware.com/cn/VMware-vSphere/6.5/com.vmware.vsphere.security.doc/GUID-7A8BEFC8-BF86-49B5-AE2D-E400AAD81BA3.html">esxi</a></p>
+
+        
+        <br />
+        <div id="comment-container">
         </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2021-07-01</div>
-        <div class="post-info">
-            <a href="/2021/07/01/hello-world/">
-                <h3>
-                    Hello World
-                </h3>
-            </a>
-            <p>
-                
-            </p>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
         </div>
+
     </div>
-    
 </div>
-<ul class="pager">
-    
-    <li class="previous">
-        <a href="/">&larr; Newer Posts</a>
-    </li>
-    
-    
-</ul>
 
     </div>
 </div>
@@ -248,7 +204,7 @@
     // We expose some of the variables needed by the front end
     window.hexo_search_path = "search.json"
     window.hexo_root = "/"
-    window.isPost = false
+    window.isPost = true
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 
