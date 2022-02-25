@@ -11,7 +11,7 @@
 
     <title>
         
-        
+        frp内网穿透 - undefined
         
     </title>
 
@@ -57,7 +57,7 @@
     </div>
     <div class="contents" id="nav-content">
         <ul>
-            <li  class=active >
+            <li >
                 <a href="/">
                     <i class="iconfont icon-shouye1"></i>
                     <span>主页</span>
@@ -92,6 +92,10 @@
         </ul>
     </div>
     
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#frps-ini%E6%9C%8D%E5%8A%A1%E7%AB%AF%E9%85%8D%E7%BD%AE"><span class="toc-text">frps.ini服务端配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#frpc%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AE"><span class="toc-text">frpc客户端配置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%9C%AC%E5%9C%B0%E9%85%8D%E7%BD%AE"><span class="toc-text">客户端本地配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8-frps-c-frps-ini-%E6%8C%87%E5%AE%9A%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-text">启动 .&#x2F;frps -c .&#x2F;frps.ini 指定配置文件</span></a></li></ol>
+</div>
+    
 </div>
 
 
@@ -116,133 +120,45 @@
     <div class="index-middle">
         <!-- Main Content -->
         
-<div class="post-preview-container" style="min-height: 720px">
-    
-    <div class="post-preview">
-        <div class="post-time">2021-12-17</div>
-        <div class="post-info">
-            <a href="/2021/12/17/cet6-writing/">
-                <h3>
-                    cet6_writing
-                </h3>
-            </a>
-            <p>
-                
-            </p>
-        </div>
+
+
+<div class="post-container">
+    <div class="post-title">
+        frp内网穿透
     </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2021-12-13</div>
-        <div class="post-info">
-            <a href="/2021/12/13/计算机网络/">
-                <h3>
-                    计算机网络
-                </h3>
-            </a>
-            <p>
-                
-            </p>
-        </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2022-02-25 10:05:48</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#frp" title="frp">frp</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
     </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2021-12-10</div>
-        <div class="post-info">
-            <a href="/2021/12/10/公司ai环境安装/">
-                <h3>
-                    公司ai环境安装
-                </h3>
-            </a>
-            <p>
-                
-            </p>
+    <div class="post-content ">
+        <p>frp下载地址:<a target="_blank" rel="noopener" href="https://github.com/fatedier/frp/releases"></a></p>
+<h2 id="frps-ini服务端配置"><a href="#frps-ini服务端配置" class="headerlink" title="frps.ini服务端配置"></a>frps.ini服务端配置</h2><p>[common]<br>bind_port = 7000<br>vhost_https_port = 7001        #当代理出来的是web服务时，在外网访问<a target="_blank" rel="noopener" href="http://vps的ip:7001/">http://vps的IP:7001</a><br>#dashboard_port状态以及代理统计信息展示,网址:7500可查看详情<br>dashboard_port = 7500<br>#dashboard_user访问用户dashboard_pwd访问密码<br>dashboard_user = admin<br>dashboard_pwd = password<br>#log_file日志文件log_level记录的日志级别log_max_days日志留存3天authentication_timeout超时时间<br>log_file = ./frps.log<br>log_level = info<br>log_max_days = 3<br>authentication_timeout = 0<br>#max_pool_count最大链接池,每个代理预先与后端服务器建立起指定数量的最大链接数<br>max_pool_count = 50</p>
+<h2 id="frpc客户端配置"><a href="#frpc客户端配置" class="headerlink" title="frpc客户端配置"></a>frpc客户端配置</h2><p>[common]<br>server_addr = 服务器地址<br>server_port = 服务器绑定端口</p>
+<h1 id="客户端本地配置"><a href="#客户端本地配置" class="headerlink" title="客户端本地配置"></a>客户端本地配置</h1><p>[ssh]<br>type = tcp<br>local_ip = 127.0.0.1<br>local_port = 1433<br>remote_port = 51489</p>
+<h2 id="启动-frps-c-frps-ini-指定配置文件"><a href="#启动-frps-c-frps-ini-指定配置文件" class="headerlink" title="启动 ./frps -c ./frps.ini 指定配置文件"></a>启动 ./frps -c ./frps.ini 指定配置文件</h2><p>more info:<a target="_blank" rel="noopener" href="https://blog.csdn.net/u011215939/article/details/103383373"></a></p>
+
+        
+        <br />
+        <div id="comment-container">
         </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2021-12-05</div>
-        <div class="post-info">
-            <a href="/2021/12/05/问题总结2021/">
-                <h3>
-                    问题总结2021
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#jdbc mysql jquery 补码" title="jdbc mysql jquery 补码">jdbc mysql jquery 补码</a>
-                <span>/</span>
-                
-                
-            </p>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
         </div>
+
     </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2021-12-05</div>
-        <div class="post-info">
-            <a href="/2021/12/05/word转md/">
-                <h3>
-                    word转md
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#markdown" title="markdown">markdown</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2021-12-05</div>
-        <div class="post-info">
-            <a href="/2021/12/05/linux-readme/">
-                <h3>
-                    linux-readme
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#linux docker" title="linux docker">linux docker</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2021-07-01</div>
-        <div class="post-info">
-            <a href="/2021/07/01/hello-world/">
-                <h3>
-                    Hello World
-                </h3>
-            </a>
-            <p>
-                
-            </p>
-        </div>
-    </div>
-    
 </div>
-<ul class="pager">
-    
-    <li class="previous">
-        <a href="/">&larr; Newer Posts</a>
-    </li>
-    
-    
-</ul>
 
     </div>
 </div>
@@ -290,7 +206,7 @@
     // We expose some of the variables needed by the front end
     window.hexo_search_path = "search.json"
     window.hexo_root = "/"
-    window.isPost = false
+    window.isPost = true
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 
