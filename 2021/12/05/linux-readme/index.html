@@ -639,7 +639,7 @@
 <p>docker import dev_web.tar dev_web</p>
 <p>//将快照文件导入为本地镜像</p>
 <p>docker run -itd -p 80:80 -p 8081:8081 -p 3336:3336 -p 8001:22 –name dev_web<br>--privileged dev_web:latest /usr/sbin/init</p>
-<p>//启动镜像</p>
+<p>通过 -e LANG=”C.UTF-8” 设置 LANG 环境变量值为 C.UTF-8<br>//启动镜像</p>
 <p>【注】 这里使用 –-privileged 不然创建的容器无法使用systemctl，生产环境不建议使用</p>
 <p>docker run -itd -p 8888:8888 –name dev_dlv2 dev_web:latest /bin/bash</p>
 <h3 id="建立软连接"><a href="#建立软连接" class="headerlink" title="建立软连接"></a>建立软连接</h3><p>linux 软链接的创建相当于windows的快捷方式</p>

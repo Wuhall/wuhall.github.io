@@ -11,7 +11,7 @@
 
     <title>
         
-        Linux常用命令以及问题场景 - undefined
+        SSO - undefined
         
     </title>
 
@@ -93,7 +93,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C"><span class="toc-text">命令行</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#tail"><span class="toc-text">tail</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#zip"><span class="toc-text">zip</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tar"><span class="toc-text">tar</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E5%9C%BA%E6%99%AF"><span class="toc-text">问题场景</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E6%96%87%E4%BB%B6%E6%9C%AB%E5%B0%BE%E8%BF%BD%E5%8A%A0%E5%86%85%E5%AE%B9"><span class="toc-text">在文件末尾追加内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE%E6%9F%90%E4%B8%AA%E6%97%B6%E9%97%B4%E8%8C%83%E5%9B%B4%E5%86%85%E7%9A%84%E6%97%A5%E5%BF%97"><span class="toc-text">查找某个时间范围内的日志</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%A5%E9%97%A8"><span class="toc-text">入门:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%AD%E5%BB%BACAS%E6%9C%8D%E5%8A%A1%E7%AB%AF"><span class="toc-text">搭建CAS服务端</span></a></li></ol>
 </div>
     
 </div>
@@ -124,15 +124,15 @@
 
 <div class="post-container">
     <div class="post-title">
-        Linux常用命令以及问题场景
+        SSO
     </div>
 
     <div class="post-meta">
-        <span class="attr">发布于：<span>2022-01-05 10:49:34</span></span>
+        <span class="attr">发布于：<span>2022-03-04 15:28:03</span></span>
         
         <span class="attr">标签：/
         
-        <a class="tag" href="/tags/#Linux" title="Linux">Linux</a>
+        <a class="tag" href="/tags/#单点登录" title="单点登录">单点登录</a>
         <span>/</span>
         
         
@@ -142,23 +142,8 @@
 </span>
     </div>
     <div class="post-content ">
-        <h2 id="命令行"><a href="#命令行" class="headerlink" title="命令行"></a>命令行</h2><h3 id="tail"><a href="#tail" class="headerlink" title="tail"></a>tail</h3><p>打印文本末尾10行</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail [file name]</span><br></pre></td></tr></table></figure>
-<p>追加打印</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail -f [file name]</span><br></pre></td></tr></table></figure>
-<p>打印文本末尾5000行</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail -n 5000 [file name]</span><br></pre></td></tr></table></figure>
-<h3 id="zip"><a href="#zip" class="headerlink" title="zip"></a>zip</h3><p>压缩文件,将 /home/html/ 这个目录下所有文件和文件夹打包为当前目录下的 html.zip,-q不显示执行细节</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zip -q -r html.zip /home/html</span><br></pre></td></tr></table></figure>
-<h3 id="tar"><a href="#tar" class="headerlink" title="tar"></a>tar</h3><p>压缩文件 压缩为gz</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zcvf userfiles.tar.gz ./userfiles/</span><br></pre></td></tr></table></figure>
-<p>解压 使用tar解压文件 遇到同名的会直接覆盖</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf userfiles.tar.gz</span><br></pre></td></tr></table></figure>
-<h2 id="问题场景"><a href="#问题场景" class="headerlink" title="问题场景"></a>问题场景</h2><h3 id="在文件末尾追加内容"><a href="#在文件末尾追加内容" class="headerlink" title="在文件末尾追加内容"></a>在文件末尾追加内容</h3><p>将文件写入到abc.txt,若没有abc.txt则会自动创建</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail -n 5000 catalina.out &gt; abc.txt</span><br></pre></td></tr></table></figure>
-<p>将文件写入到abc.txt末尾,若没有abc.txt会被自动创建</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail -n 5000 catalina.out &gt;&gt; abc.txt</span><br></pre></td></tr></table></figure>
-<h3 id="查找某个时间范围内的日志"><a href="#查找某个时间范围内的日志" class="headerlink" title="查找某个时间范围内的日志"></a>查找某个时间范围内的日志</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed  -n   &#x27;/2022-02-27 22:00:00/,/2022-02-27 22:30:59/p&#x27;    catalina.out &gt; test_append.txt </span><br></pre></td></tr></table></figure>
+        <h2 id="入门"><a href="#入门" class="headerlink" title="入门:"></a>入门:</h2><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/75edcc05acfd">blog</a><br>要点：<br>1.同域<br>需要解决cookie、session共享问题<br>由于cookie不能跨域，需要在设置cookie时设置为顶域<br>2.不同域<br>cookie、session可不共享<br>访问应用资源需经过认证服务器，认证服务器创建ticket，ticket作为携带参数跳转目标服务，目标服务访问认证服务器判断ticket是否有效</p>
+<h2 id="搭建CAS服务端"><a href="#搭建CAS服务端" class="headerlink" title="搭建CAS服务端"></a>搭建CAS服务端</h2><p>overlay method 生成CAS war包<br>1.代码下载<br><a target="_blank" rel="noopener" href="https://github.com/apereo/cas-overlay-template/tree/5.3"></a><br>2.build package</p>
 
         
         <br />
