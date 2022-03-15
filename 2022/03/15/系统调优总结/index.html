@@ -11,7 +11,7 @@
 
     <title>
         
-        
+        系统调优总结 - undefined
         
     </title>
 
@@ -57,7 +57,7 @@
     </div>
     <div class="contents" id="nav-content">
         <ul>
-            <li  class=active >
+            <li >
                 <a href="/">
                     <i class="iconfont icon-shouye1"></i>
                     <span>主页</span>
@@ -92,6 +92,10 @@
         </ul>
     </div>
     
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Mysql%E4%BC%98%E5%8C%96"><span class="toc-text">Mysql优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E4%BC%98%E5%8C%96"><span class="toc-text">系统优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE"><span class="toc-text">软件配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E5%90%AF"><span class="toc-text">重启</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tomcat%E4%BC%98%E5%8C%96"><span class="toc-text">Tomcat优化</span></a></li></ol>
+</div>
+    
 </div>
 
 
@@ -116,173 +120,45 @@
     <div class="index-middle">
         <!-- Main Content -->
         
-<div class="post-preview-container" style="min-height: 720px">
-    
-    <div class="post-preview">
-        <div class="post-time">2021-12-29</div>
-        <div class="post-info">
-            <a href="/2021/12/29/log4j1-x漏洞梳理/">
-                <h3>
-                    log4j1.x漏洞梳理
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#log4j1.x" title="log4j1.x">log4j1.x</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
+
+
+<div class="post-container">
+    <div class="post-title">
+        系统调优总结
     </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2021-12-28</div>
-        <div class="post-info">
-            <a href="/2021/12/28/动手学深度学习/">
-                <h3>
-                    动手学深度学习
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#deep learning" title="deep learning">deep learning</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2022-03-15 14:10:37</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#MySQL调优、Tomcat调优" title="MySQL调优、Tomcat调优">MySQL调优、Tomcat调优</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
     </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2021-12-17</div>
-        <div class="post-info">
-            <a href="/2021/12/17/cet6-writing/">
-                <h3>
-                    cet6_writing
-                </h3>
-            </a>
-            <p>
-                
-            </p>
+    <div class="post-content ">
+        <h2 id="Mysql优化"><a href="#Mysql优化" class="headerlink" title="Mysql优化"></a>Mysql优化</h2><h3 id="系统优化"><a href="#系统优化" class="headerlink" title="系统优化"></a>系统优化</h3><p>CPU个数8 内存32GiB</p>
+<h3 id="软件配置"><a href="#软件配置" class="headerlink" title="软件配置"></a>软件配置</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/mysql/mysql.conf.d/mysqld.cnf</span><br><span class="line">sql_mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION</span><br><span class="line"># 不区分大小写</span><br><span class="line">lower_case_table_names = 1</span><br><span class="line"># 缓存、最大连接数设置</span><br><span class="line">tmp_table_size = 64M</span><br><span class="line">read_rnd_buffer_size = 8M</span><br><span class="line">sort_buffer_size = 4M</span><br><span class="line">innodb_buffer_pool_size = 20G</span><br><span class="line">max_connections = 1000</span><br><span class="line">innodb_thread_concurrency=6</span><br><span class="line"># 禁止反解析</span><br><span class="line">skip-name-resolve</span><br><span class="line"># 慢查询开启</span><br><span class="line">slow_query_log =1</span><br><span class="line">long_query_time=1</span><br><span class="line">slow_query_log_file=/data/mysql/ubuntu-virtual-machine-slow.log</span><br></pre></td></tr></table></figure>
+<h3 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">service mysql stop</span><br><span class="line">service mysql start</span><br></pre></td></tr></table></figure>
+
+<h2 id="Tomcat优化"><a href="#Tomcat优化" class="headerlink" title="Tomcat优化"></a>Tomcat优化</h2><p>vi ./conf/server.xml<br><img src="./%E6%9C%80%E5%A4%A7%E7%BA%BF%E7%A8%8B%E6%95%B0.jpg"></p>
+
+        
+        <br />
+        <div id="comment-container">
         </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2021-12-13</div>
-        <div class="post-info">
-            <a href="/2021/12/13/计算机网络/">
-                <h3>
-                    计算机网络
-                </h3>
-            </a>
-            <p>
-                
-            </p>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
         </div>
+
     </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2021-12-10</div>
-        <div class="post-info">
-            <a href="/2021/12/10/公司ai环境安装/">
-                <h3>
-                    公司ai环境安装
-                </h3>
-            </a>
-            <p>
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2021-12-05</div>
-        <div class="post-info">
-            <a href="/2021/12/05/问题总结2021/">
-                <h3>
-                    问题总结2021
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#jdbc mysql jquery 补码" title="jdbc mysql jquery 补码">jdbc mysql jquery 补码</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2021-12-05</div>
-        <div class="post-info">
-            <a href="/2021/12/05/word转md/">
-                <h3>
-                    word转md
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#markdown" title="markdown">markdown</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2021-12-05</div>
-        <div class="post-info">
-            <a href="/2021/12/05/linux-readme/">
-                <h3>
-                    linux-readme
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#linux docker" title="linux docker">linux docker</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2021-07-01</div>
-        <div class="post-info">
-            <a href="/2021/07/01/hello-world/">
-                <h3>
-                    Hello World
-                </h3>
-            </a>
-            <p>
-                
-            </p>
-        </div>
-    </div>
-    
 </div>
-<ul class="pager">
-    
-    <li class="previous">
-        <a href="/">&larr; Newer Posts</a>
-    </li>
-    
-    
-</ul>
 
     </div>
 </div>
@@ -330,7 +206,7 @@
     // We expose some of the variables needed by the front end
     window.hexo_search_path = "search.json"
     window.hexo_root = "/"
-    window.isPost = false
+    window.isPost = true
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 
