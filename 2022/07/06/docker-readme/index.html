@@ -93,7 +93,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%95%9C%E5%83%8F"><span class="toc-text">镜像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%B9%E5%99%A8"><span class="toc-text">容器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E5%9C%BA%E6%99%AF"><span class="toc-text">问题场景</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#tomcat%E5%AE%B9%E5%99%A8%E6%97%B6%E5%8C%BA%E4%B8%8E%E5%AE%BF%E4%B8%BB%E6%9C%BA%E6%97%B6%E5%8C%BA%E4%B8%8D%E4%B8%80%E8%87%B4"><span class="toc-text">tomcat容器时区与宿主机时区不一致</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%95%9C%E5%83%8F"><span class="toc-text">镜像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%B9%E5%99%A8"><span class="toc-text">容器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E5%9C%BA%E6%99%AF"><span class="toc-text">问题场景</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#tomcat%E5%AE%B9%E5%99%A8%E6%97%B6%E5%8C%BA%E4%B8%8E%E5%AE%BF%E4%B8%BB%E6%9C%BA%E6%97%B6%E5%8C%BA%E4%B8%8D%E4%B8%80%E8%87%B4"><span class="toc-text">tomcat容器时区与宿主机时区不一致</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A8%E9%80%81%E9%95%9C%E5%83%8F%E8%87%B3dockerhub"><span class="toc-text">推送镜像至dockerhub</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E9%95%9C%E5%83%8F"><span class="toc-text">删除镜像</span></a></li></ol></li></ol>
 </div>
     
 </div>
@@ -172,7 +172,13 @@
 <p>复制宿主机时区文件至docker容器中</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker cp /etc/localtime sso_client::/etc/localtime</span><br></pre></td></tr></table></figure>
 <p>修改tomcat中时区<br>vi tomcat/bin/catalina.sh<br>修改参数 增加时区信息-Duser.timezone=GMT+08<br>JAVA_OPTS=”$JAVA_OPTS -Duser.timezone=GMT+08”</p>
-
+<h3 id="推送镜像至dockerhub"><a href="#推送镜像至dockerhub" class="headerlink" title="推送镜像至dockerhub"></a>推送镜像至dockerhub</h3><p>创建账号<br><a target="_blank" rel="noopener" href="https://hub.docker.com/">1.创建</a><br>1.登录dockerhub</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker login</span><br></pre></td></tr></table></figure>
+<p>2.tag images 其中TARGET_IMAGE须为dockerhub账户名</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]</span><br><span class="line">docker tag tomcat/private:latest wuhall/tomcat:private</span><br></pre></td></tr></table></figure>
+<p>3.推送/拉取镜像</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker push wuhall/tomcat:private</span><br><span class="line">docker pull wuhall/tomcat:private</span><br></pre></td></tr></table></figure>
+<h3 id="删除镜像"><a href="#删除镜像" class="headerlink" title="删除镜像"></a>删除镜像</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi [容器id]</span><br></pre></td></tr></table></figure>
         
         <br />
         <div id="comment-container">
