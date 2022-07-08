@@ -93,7 +93,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C"><span class="toc-text">常用操作</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C"><span class="toc-text">常用操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E5%9C%BA%E6%99%AF"><span class="toc-text">问题场景</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE%E4%B8%8A%E4%BC%A0%E8%87%B3github"><span class="toc-text">本地创建项目上传至github</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8Egithub%E6%8B%89%E5%8F%96%E9%A1%B9%E7%9B%AE"><span class="toc-text">从github拉取项目</span></a></li></ol></li></ol>
 </div>
     
 </div>
@@ -142,12 +142,16 @@
 </span>
     </div>
     <div class="post-content ">
-        <p>git是分布式的版本控制系统</p>
-<h2 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h2><p>拷贝仓库项目</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone &lt;url&gt;</span><br></pre></td></tr></table></figure>
-<p>上传文件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 将文件添加至暂存区</span><br><span class="line">git add .</span><br><span class="line"># 将暂存内容添加到仓库中</span><br><span class="line">git commit -m &quot;project init&quot;</span><br><span class="line"># 将本地版本分支上传至远程并合并</span><br><span class="line">将本地master分支上传到远程origin分支</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+        <p>fork <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=RGOj5yH7evk&amp;t=87s">https://www.youtube.com/watch?v=RGOj5yH7evk&amp;t=87s</a></p>
+<h2 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">clone -&gt; 从仓库copy代码至本地</span><br><span class="line">add -&gt; 跟踪文件</span><br><span class="line">commit -&gt; 保存文件至Git</span><br><span class="line">push -&gt; 上传文件至仓库</span><br><span class="line">pull -&gt; 拉取改变的文件到本地</span><br><span class="line"></span><br><span class="line">git status -&gt; 查看文件状态 可以看到哪些文件没有被跟踪到 哪些文件修改了</span><br><span class="line">git add . -&gt; 跟踪所有文件 获取这些文件的变化信息</span><br><span class="line">git commin -m &quot;message&quot; -&gt; 提交文件 必须有一条消息</span><br><span class="line">git push -&gt; 推送至远程仓库</span><br><span class="line"></span><br><span class="line">git branch -&gt; 分支</span><br><span class="line">git reset -&gt; 撤销</span><br><span class="line">git log</span><br></pre></td></tr></table></figure>
+<p>注<br>push 的先决条件 验证账户 SSH秘钥</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -b 4096 -C &quot;focuson@yeah.net&quot;</span><br></pre></td></tr></table></figure>
 
+<h2 id="问题场景"><a href="#问题场景" class="headerlink" title="问题场景"></a>问题场景</h2><h3 id="本地创建项目上传至github"><a href="#本地创建项目上传至github" class="headerlink" title="本地创建项目上传至github"></a>本地创建项目上传至github</h3><p>create a new repository on the command line</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;# demo&quot; &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git branch -M main</span><br><span class="line">git remote add origin git@github.com:Wuhall/demo.git</span><br><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
+<p>push an existing repository from the command line</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin git@github.com:Wuhall/demo.git</span><br><span class="line">git branch -M main</span><br><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
+<h3 id="从github拉取项目"><a href="#从github拉取项目" class="headerlink" title="从github拉取项目"></a>从github拉取项目</h3>
         
         <br />
         <div id="comment-container">
